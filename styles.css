@@ -28,6 +28,7 @@ body{
   margin:0 auto;
 }
 
+/* Header */
 .site-header{
   position:sticky;
   top:0;
@@ -38,10 +39,10 @@ body{
 }
 
 .site-header .nav{
-  display:flex;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
   align-items:center;
-  justify-content:space-between;
-  gap:20px;
+  gap:24px;
   padding:14px 0;
 }
 
@@ -63,6 +64,7 @@ body{
 
 nav{
   display:flex;
+  justify-content:center;
   align-items:center;
   gap:22px;
 }
@@ -72,18 +74,31 @@ nav a{
   color:var(--navy);
   font-weight:600;
   margin:0;
+  white-space:nowrap;
 }
 
-nav .cta{
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-self:end;
+}
+
+.header-actions .cta{
   padding:10px 16px;
   border:1.5px solid var(--navy);
   border-radius:10px;
+  text-decoration:none;
+  color:var(--navy);
+  font-weight:600;
+  white-space:nowrap;
 }
 
 .lang-switch{
   display:flex;
   align-items:center;
   gap:8px;
+  justify-self:end;
 }
 
 .lang-btn{
@@ -93,8 +108,12 @@ nav .cta{
   border-radius:10px;
   padding:8px 10px;
   font-weight:700;
+  font-size:.85rem;
+  line-height:1;
   cursor:pointer;
   transition:all .25s ease;
+  min-width:40px;
+  height:36px;
 }
 
 .lang-btn:hover{
@@ -107,6 +126,7 @@ nav .cta{
   color:#fff;
 }
 
+/* Hero */
 .hero{
   position:relative;
   overflow:hidden;
@@ -126,6 +146,10 @@ nav .cta{
 .hero-art{
   position:relative;
   z-index:2;
+}
+
+.hero-copy{
+  text-align:center;
 }
 
 .hero-copy h1{
@@ -153,6 +177,7 @@ nav .cta{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
+  justify-content:center;
 }
 
 .button{
@@ -192,6 +217,7 @@ nav .cta{
   gap:10px;
   flex-wrap:wrap;
   margin-top:16px;
+  justify-content:center;
 }
 
 .hero-tags span{
@@ -206,7 +232,7 @@ nav .cta{
   width:100%;
   max-width:520px;
   display:block;
-  margin-left:auto;
+  margin:0 auto;
   filter:drop-shadow(0 12px 36px rgba(13,59,102,.22));
   border-radius:16px;
 }
@@ -222,6 +248,7 @@ nav .cta{
     radial-gradient(60% 60% at 20% 20%, rgba(13,59,102,.12), transparent 70%);
 }
 
+/* Stack */
 .stack{
   background:var(--light);
   text-align:center;
@@ -230,15 +257,18 @@ nav .cta{
   font-weight:600;
 }
 
+/* Sections */
 section h2{
   font-family:Poppins, Inter, sans-serif;
   font-size:2rem;
   margin:0;
+  text-align:center;
 }
 
 .lead{
   color:#5b6470;
   margin-top:8px;
+  text-align:center;
 }
 
 #servicos,
@@ -248,6 +278,7 @@ section h2{
   padding:70px 0;
 }
 
+/* Cards */
 .cards,
 .project-logos,
 .tiers{
@@ -291,6 +322,7 @@ section h2{
   line-height:1.6;
 }
 
+/* Processo */
 .process{
   background:var(--light);
   padding:70px 0;
@@ -324,6 +356,7 @@ section h2{
   margin-bottom:10px;
 }
 
+/* Pricing */
 .tiers{
   align-items:stretch;
 }
@@ -361,6 +394,7 @@ section h2{
   color:var(--navy);
 }
 
+/* CTA */
 .cta-band{
   background:linear-gradient(90deg, rgba(13,148,136,.15), rgba(13,59,102,.18));
   padding:38px 0;
@@ -377,6 +411,11 @@ section h2{
   margin:0;
   color:#4b5563;
   font-size:1.05rem;
+}
+
+/* Contact */
+#contato{
+  padding:70px 0;
 }
 
 #contact-form{
@@ -404,6 +443,7 @@ section h2{
   justify-self:start;
 }
 
+/* Footer */
 .site-footer{
   background:#fbfdff;
   border-top:1px solid #eef2f7;
@@ -423,9 +463,10 @@ section h2{
   text-decoration:none;
 }
 
+/* Reveal */
 .reveal{
-  opacity:0;
-  transform:translateY(16px);
+  opacity:1;
+  transform:none;
   transition:opacity .6s ease, transform .6s ease;
 }
 
@@ -442,30 +483,37 @@ section h2{
   transition-duration:.8s;
 }
 
+/* Header on scroll */
 [data-elevate].scrolled{
   box-shadow:0 8px 30px rgba(13,59,102,.15);
 }
 
+/* Parallax */
 .parallax{
   transform-style:preserve-3d;
   will-change:transform;
 }
 
+/* Responsive */
 @media (max-width: 900px){
   .site-header .nav{
-    flex-wrap:wrap;
+    grid-template-columns:1fr;
+    justify-items:center;
+    gap:12px;
   }
 
   nav{
-    width:100%;
     justify-content:center;
     flex-wrap:wrap;
     gap:14px;
   }
 
+  .header-actions{
+    justify-self:center;
+  }
+
   .lang-switch{
-    width:100%;
-    justify-content:center;
+    justify-self:center;
   }
 
   .hero-grid{
@@ -502,5 +550,10 @@ section h2{
 
   .cta-band h3{
     font-size:1.35rem;
+  }
+
+  .header-actions{
+    flex-wrap:wrap;
+    justify-content:center;
   }
 }
