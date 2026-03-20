@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Language translations
+  // Translations
   const translations = {
     pt: {
       navServices: "Serviços",
@@ -236,7 +236,10 @@ document.addEventListener("DOMContentLoaded", () => {
         pageTitle.textContent = "LAIA Tech — Transformamos operações em sistemas escaláveis";
       }
       if (metaDescription) {
-        metaDescription.setAttribute("content", "Consultoria tecnológica moderna para startups e pequenas empresas: automação, sistemas, UX e suporte contínuo.");
+        metaDescription.setAttribute(
+          "content",
+          "Consultoria tecnológica moderna para startups e pequenas empresas: automação, sistemas, UX e suporte contínuo."
+        );
       }
     } else {
       document.documentElement.lang = "en";
@@ -244,7 +247,10 @@ document.addEventListener("DOMContentLoaded", () => {
         pageTitle.textContent = "LAIA Tech — We turn operations into scalable systems";
       }
       if (metaDescription) {
-        metaDescription.setAttribute("content", "Modern technology consulting for startups and small businesses: automation, systems, UX and ongoing support.");
+        metaDescription.setAttribute(
+          "content",
+          "Modern technology consulting for startups and small businesses: automation, systems, UX and ongoing support."
+        );
       }
     }
 
